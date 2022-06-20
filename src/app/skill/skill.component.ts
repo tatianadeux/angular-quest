@@ -8,22 +8,8 @@ import { Skill } from '../models/skill.model';
 })
 export class SkillComponent implements OnInit {
 
-/*
   @Input()
-  lastName: string;
-
-  @Input()
-  firstName: string;
-
-  @Input()
-  age: number;
-
-  @Input()
-  gender: string;
-
-  @Input()
-  biography: string;*/
-
+  skill: Skill = new Skill("","","");
 
   constructor() { }
 

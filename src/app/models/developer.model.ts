@@ -7,7 +7,7 @@ export class Developer {
         public age: number,
         public gender: string,
         public biography: string,
-       /* public skillsList: Skill[]*/
+        public skillsList: Skill[]
 
     ) {}
 }

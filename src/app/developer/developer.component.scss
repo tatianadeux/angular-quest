@@ -1,0 +1,22 @@
+div {
+  border: 1px red solid;
+  width: 50%;
+  margin: 0 auto;
+}
+
+div img {
+  border-radius: 50%;
+  width: 25%;
+  margin: 0 auto;
+  display: block;
+}
+
+div p {
+  text-align: center;
+}
+
+.div-container {
+  display: flex;
+  width: 70%;
+  justify-content: space-evenly;
+}

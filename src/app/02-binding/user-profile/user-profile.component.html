@@ -1,0 +1,22 @@
+<section>
+  <div>
+    <img [src]="user.photo" alt="Photo de {{user.firstName}}">
+  </div>
+  <div>
+    <p>Nom : {{user.name}}</p>
+    <p>Prénom : {{user.firstName}}</p>
+    <div>
+      <p>Citation : "{{user.quote}}"</p>
+      <input type="text" name="" id="" [(ngModel)]="user.quote">
+    </div>
+
+    <div>
+      <span [hidden]="!showAge" (click)="toggleAge()" id="id-age">Âge : {{user.age}}</span>
+      <button [hidden]="showAge" (click)="toggleAge()">Afficher l'âge</button>
+      <button [hidden]="!showAge" ((click)="toggleAge()">Masquer l'âge</button>
+    </div>
+
+
+  </div>
+</section>
+

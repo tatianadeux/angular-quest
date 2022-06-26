@@ -1,0 +1,21 @@
+<section class="user-card" *ngFor="let user of userList">
+  <img [src]="user.pictureSrc" alt="Une image d'{{user.firstName}}">
+  <h1>Bonjour {{user.firstName}}</h1>
+  <p>Citation : "{{user.quote}}" </p>
+
+  <p [hidden]="!showAge" (click)="toggleAge()" id="id-age">Âge : {{user.age}}</p>
+  <button [hidden]="showAge" (click)="toggleAge()">Afficher l'âge</button>
+  <button [hidden]="!showAge" (click)="toggleAge()">Masquer l'âge</button>
+
+  <ng-container *ngIf="user.isPremium">
+    <p>{{user.firstName}} est un utilisateur premium</p>
+    <ul *ngFor="let serie of user.seriesList">
+      <li>{{serie}}</li>
+    </ul>
+  </ng-container>
+  <ng-container *ngIf="!user.isPremium">
+    <p>{{user.firstName}}, il te reste 3 épisodes à regarder aujourd'hui</p>
+    <button>Je passe au premimum</button>
+  </ng-container>
+
+</section>

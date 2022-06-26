@@ -1,0 +1,9 @@
+<h1>Create an onomatopia</h1>
+<!-- appeler le sélecteur de l'enfant -->
+<ul *ngFor="let onomatopia of onomatopoeias">
+  <li>{{onomatopia}}</li>
+</ul>
+<app-create-onomatopia
+(sendOnomatopiaToParent)="onReceiveNewOnomatopia($event)"
+>
+</app-create-onomatopia>

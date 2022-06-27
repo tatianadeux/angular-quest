@@ -10,6 +10,10 @@ import { UserCardComponent } from './02-binding/user-card/user-card.component';
 import { UserProfileComponent } from './02-binding/user-profile/user-profile.component';
 import { CreateOnomatopiaComponent } from './08-output/create-onomatopia/create-onomatopia.component';
 import { OnomatopoeiasComponent } from './08-output/onomatopoeias/onomatopoeias.component';
+import { MenuComponent } from './04-router/menu/menu.component';
+import { SignupComponent } from './04-router/signup/signup.component';
+import { RouterModule } from '@angular/router';
+import { ROUTES } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -19,12 +23,15 @@ import { OnomatopoeiasComponent } from './08-output/onomatopoeias/onomatopoeias.
     UserCardComponent,
     UserProfileComponent,
     CreateOnomatopiaComponent,
-    OnomatopoeiasComponent
+    OnomatopoeiasComponent,
+    MenuComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [],
   bootstrap: [AppComponent]

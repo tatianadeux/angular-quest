@@ -4,9 +4,10 @@ import { UserProfileComponent } from './02-binding/user-profile/user-profile.com
 import { SignupComponent } from './04-router/signup/signup.component';
 
 const ROUTES: Routes = [
+  { path: '', component: UserProfileComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'userprofile', component: UserProfileComponent},
-  { path: './', component: UserProfileComponent }
+  { path: 'userprofile', component: UserProfileComponent}
+
 ];
 
 @NgModule({

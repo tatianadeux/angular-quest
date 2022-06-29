@@ -14,7 +14,7 @@ import { MenuComponent } from './04-router/menu/menu.component';
 import { MenuInscriptionComponent } from './04-router/menu-inscription/menu-inscription.component';
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './app-routing.module';
-import { SignUpComponent } from './05-template-driven-forms/sign-up/sign-up.component';
+import { DrivenFormComoponent } from './05-template-driven-forms/sign-up/driven-form.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,7 @@ import { SignUpComponent } from './05-template-driven-forms/sign-up/sign-up.comp
     OnomatopoeiasComponent,
     MenuComponent,
     MenuInscriptionComponent,
-    SignUpComponent
+    DrivenFormComoponent
   ],
   imports: [
     BrowserModule,

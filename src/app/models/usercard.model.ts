@@ -1,4 +1,4 @@
-export class User {
+export class UserCard {
   constructor(
     public firstName: string,
     public age: number,

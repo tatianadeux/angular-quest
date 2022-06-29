@@ -7,7 +7,10 @@ import { DrivenUser } from 'src/app/models/driven-form.model';
   styleUrls: ['./driven-form.component.scss']
 })
 export class DrivenFormComoponent implements OnInit {
+
   drivenUser: DrivenUser = new DrivenUser("","","","");
+
+  drivenUserList: DrivenUser[] = []
 
   constructor() { }
 
@@ -15,6 +18,6 @@ export class DrivenFormComoponent implements OnInit {
   }
 
   onSubmit(): void {
-
+    this.drivenUserList.push(new DrivenUser(this.drivenUser.firstname, this.drivenUser.lastname, this.drivenUser.email, this.drivenUser.password))
   }
 }

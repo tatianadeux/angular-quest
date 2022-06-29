@@ -1,18 +1,15 @@
-<p>It Works!</p>
+<form (ngSubmit)="myForm.valid && onSubmit()" #myForm="ngForm" >
+  <p>Form submitted ? {{myForm.submitted}}</p>
+  <p>Form valid ? {{myForm.valid}}</p>
+  <p>Form invalid ? {{!myForm.valid}}</p>
 
-<form (ngSubmit)="onSubmit()" #myForm="ngForm">
-  <div>
-    Form submitted ? {{myForm.submitted}}
-    Form valid ? {{myForm.valid}}
-    Form invalid ? {{!myForm.valid}}
-  </div>
   <div>
     <label for="firstname">Prénom</label>
     <input type="text" name="firstname" id="firstname"
       [(ngModel)]="drivenUser.firstname" #firstname="ngModel"
       required minlength="3" maxlength="15">
   </div>
-  <div *ngIf="firstname.errors">
+  <div *ngIf="firstname.errors && myForm.submitted">
     <span class="errors-msg" *ngIf="firstname.errors?.['required']">Le prénom est manquant</span>
     <span class="errors-msg" *ngIf="firstname.errors?.['minlength']">Le prénom doit comporter au moins 3 caractères</span>
     <span class="errors-msg" *ngIf="firstname.errors?.['maxlength']">Le prénom ne doit pas dépasser 15 caractères</span>
@@ -24,7 +21,7 @@
       [(ngModel)]="drivenUser.lastname" #lastname="ngModel"
       required minlength="3" maxlength="15">
   </div>
-  <div *ngIf="lastname.errors">
+  <div *ngIf="lastname.errors && myForm.submitted">
     <span class="errors-msg" *ngIf="lastname.errors?.['required']">Le nom est manquant</span>
     <span class="errors-msg" *ngIf="lastname.errors?.['minlength']">Le nom doit comporter au moins 3 caractères</span>
     <span class="errors-msg" *ngIf="lastname.errors?.['maxlength']">Le nom ne doit pas dépasser 15 caractères</span>
@@ -32,17 +29,27 @@
 
   <div>
     <label for="email">Email</label>
-    <input type="text" name="email" id="email" [(ngModel)]="drivenUser.email">
+    <input type="email" name="email" id="email" [(ngModel)]="drivenUser.email" #email="ngModel" required email>
+  </div>
+  <div *ngIf="email.errors && myForm.submitted">
+    <span class="errors-msg" *ngIf="email.errors?.['required']">L'email est manquant</span>
+    <span class="errors-msg" *ngIf="email.errors?.['email']">L'email n'est pas valide</span>
   </div>
 
   <div>
     <label for="password">Mot de passe</label>
-    <input type="password" name="password" id="password" [(ngModel)]="drivenUser.password">
+    <input type="password" name="password" id="password" [(ngModel)]="drivenUser.password" #password="ngModel" required>
+  </div>
+  <div *ngIf="password.errors && myForm.submitted">
+    <span class="errors-msg" *ngIf="password.errors?.['required']">Le mot de passe est manquant</span>
   </div>
 
   <button type="submit">Je m'inscris</button>
 </form>
 
-<section>
-  <p>L'utilisateur s'appelle {{drivenUser.firstname}} {{drivenUser.lastname}} et on peut lui envoyer un mail à {{drivenUser.email}}</p>
-</section>
+  <ul *ngFor="let user of drivenUserList">
+    <li>L'utilisateur s'appelle {{user.firstname}} {{user.lastname}}
+      et on peut lui envoyer un mail à {{user.email}}</li>
+  </ul>
+
+

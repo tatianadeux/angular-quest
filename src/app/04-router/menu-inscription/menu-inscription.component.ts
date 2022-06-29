@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-signup',
+  selector: 'app-menu-inscription',
   templateUrl: './menu-inscription.component.html',
   styleUrls: ['./menu-inscription.component.scss']
 })

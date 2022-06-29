@@ -11,9 +11,10 @@ import { UserProfileComponent } from './02-binding/user-profile/user-profile.com
 import { CreateOnomatopiaComponent } from './08-output/create-onomatopia/create-onomatopia.component';
 import { OnomatopoeiasComponent } from './08-output/onomatopoeias/onomatopoeias.component';
 import { MenuComponent } from './04-router/menu/menu.component';
-import { SignupComponent } from './04-router/signup/signup.component';
+import { MenuInscriptionComponent } from './04-router/menu-inscription/menu-inscription.component';
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './app-routing.module';
+import { SignUpComponent } from './05-template-driven-forms/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ROUTES } from './app-routing.module';
     CreateOnomatopiaComponent,
     OnomatopoeiasComponent,
     MenuComponent,
-    SignupComponent
+    MenuInscriptionComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,

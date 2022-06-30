@@ -15,6 +15,7 @@ import { MenuInscriptionComponent } from './04-router/menu-inscription/menu-insc
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './app-routing.module';
 import { DrivenFormComoponent } from './05-template-driven-forms/sign-up/driven-form.component';
+import { CocktailslistComponent } from './10-services/cocktailslist/cocktailslist.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { DrivenFormComoponent } from './05-template-driven-forms/sign-up/driven-
     OnomatopoeiasComponent,
     MenuComponent,
     MenuInscriptionComponent,
-    DrivenFormComoponent
+    DrivenFormComoponent,
+    CocktailslistComponent
   ],
   imports: [
     BrowserModule,

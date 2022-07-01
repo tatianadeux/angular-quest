@@ -1,0 +1,43 @@
+<h3>Formulaire d'inscription</h3>
+<form (submit)="onSubmitCreateNewUser()">
+  <div>
+    <label for="username">Username</label>
+    <input type="text" id="username" [formControl]="username">
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input type="text" id="email" [formControl]="email">
+
+  </div>
+  <div>
+    <label for="password">Mot de Passe</label>
+    <input type="password" id="password" [formControl]="password">
+
+  </div>
+  <div>
+    <label for="streetName">Nom de Rue</label>
+    <input type="text" id="streetName" [formControl]="streetName">
+  </div>
+  <div>
+    <label for="streetNumber">Numéro de Rue</label>
+    <input type="number" id="streetNumber" [formControl]="streetNumber">
+  </div>
+  <div>
+    <label for="zipcode">Code Postal</label>
+    <input type="text" id="zipcode" [formControl]="zipcode">
+  </div>
+  <div>
+    <label for="city">Ville</label>
+    <input type="text" id="city" [formControl]="city">
+  </div>
+  <input type="submit" value="Je m'inscris">
+</form>
+
+<h1>Utilisateurs inscrits :</h1>
+  <section *ngFor="let user of usersList">
+    <ul>
+      <li>{{user.username}}, joignable à {{user.email}}, habitant à {{user.city}}, {{user.zipcode}}</li>
+    </ul>
+  </section>
+
+<!-- -->

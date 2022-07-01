@@ -16,7 +16,4 @@ export class CocktailslistComponent implements OnInit {
   ngOnInit(): void {
     this.cocktailsList = this.cocktailService.getCocktails()
   }
-
-
-
 }

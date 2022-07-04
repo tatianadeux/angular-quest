@@ -9,11 +9,18 @@ import { CocktailService } from 'src/app/services/cocktail.service';
 })
 export class CocktailslistComponent implements OnInit {
 
-  cocktailsList: Cocktail[] = [];
+  public cocktailsList: Cocktail[] = [];
+  private service: CocktailService;
 
-  constructor(public cocktailService: CocktailService) { }
+  constructor(public paramService: CocktailService) {
+    this.service = paramService;
+  }
 
-  ngOnInit(): void {
-    this.cocktailsList = this.cocktailService.getCocktails()
+  public ngOnInit(): void {
+    this.service.getCocktails().subscribe(
+      /*(cocktailArryay: Cocktail[]) => {
+        this.cocktailsList = cocktailArryay
+      }*/
+    )
   }
 }

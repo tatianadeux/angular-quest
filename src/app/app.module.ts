@@ -19,6 +19,7 @@ import { ROUTES } from './app-routing.module';
 import { DrivenFormComoponent } from './05-template-driven-forms/sign-up/driven-form.component';
 import { CocktailslistComponent } from './10-services/cocktailslist/cocktailslist.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { NasaComponent } from './12-nasa/nasa/nasa.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     MenuInscriptionComponent,
     DrivenFormComoponent,
     CocktailslistComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    NasaComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { UserReactive } from 'src/app/models/user-reactiveform.model';
+import { emailValidator } from '../validators/email-validator';
 
 @Component({
   selector: 'app-reactive-form',
@@ -10,10 +11,10 @@ import { UserReactive } from 'src/app/models/user-reactiveform.model';
 export class ReactiveFormComponent implements OnInit {
 
   userForm = this.formBuilder.group({
-    username : [''],
+    username : ['', Validators.required],
     credentials: this.formBuilder.group({
-      email : [''],
-      password : [''],
+      email : ['', [Validators.required, emailValidator]],
+      password : ['', Validators.required],
     }),
     streetName : [''],
     streetNumber :[],
@@ -39,10 +40,23 @@ export class ReactiveFormComponent implements OnInit {
     let zipcode = this.userForm.get('zipcode')?.value;
     let city = this.userForm.get('city')?.value;
 
-    console.log(email, password)
     this.usersList.push(
       new UserReactive(username, email, password, streetName, streetNumber, zipcode, city));
   }
 
+  get username(){
+    console.log(this.userForm.controls['username']);
+    return this.userForm.controls['username'];
+  }
+
+  get credentials(){
+    console.log(this.userForm.controls['credentials'])
+    return this.userForm.controls['credentials'];
+  }
+
+  get email() {
+    console.log(this.userForm.controls['credentials'].get('email'))
+    return this.userForm.controls['credentials'].get('email');
+  }
 
 }

@@ -1,10 +1,19 @@
 <h3>Formulaire d'inscription</h3>
 <form (submit)="onSubmitCreateNewUser()" [formGroup]="userForm">
+  <div *ngIf="username.errors && !username.pristine" class="error-msg">
+    <span *ngIf="username.errors?.['required']">Le nom d'utilisateur est requis.</span>
+    <span *ngIf="username.invalid">Le nom d'utilisateur est invalide.</span>
+  </div>
   <div>
     <label for="username">Username</label>
     <input type="text" id="username" formControlName="username">
   </div>
   <div formGroupName="credentials">
+    <div *ngIf="email?.errors && !email?.pristine" class="error-msg">
+      <div *ngIf="email?.errors?.['required'] ">L'email est requis.</div>
+      <!-- afficher l'erreur quand le mail est invalide-->
+      <div *ngIf="email?.errors?.['validation']">L'email est invalide.</div>
+    </div>
     <div>
       <label for="email">Email</label>
       <input type="text" id="email" formControlName="email">

@@ -1,24 +1,23 @@
- {
-  "cocktailsList" : [
-    {
-      "name" : "Piña Colada",
-      "price" : 4,
-      "image" : "https://assets.afcdn.com/recipe/20180705/80258_w350h250c1cx974cy1535.jpg"
-    },
+ [
     {
       "name" : "Mojito",
       "price" : 3,
-      "image" : "https://assets.afcdn.com/recipe/20180705/80255_w350h250c1cx2774cy1849.jpg"
+      "img" : "https://assets.afcdn.com/recipe/20180705/80255_w350h250c1cx2774cy1849.jpg"
+    },
+    {
+      "name" : "Piña Colada",
+      "price" : 4,
+      "img" : "https://assets.afcdn.com/recipe/20180705/80258_w350h250c1cx974cy1535.jpg"
     },
     {
       "name" : "Punch Exotique",
       "price" : 4,
-      "image" : "https://assets.afcdn.com/recipe/20180705/80348_w350h250c1cx1491cy2383.jpg"
+      "img" : "https://assets.afcdn.com/recipe/20180705/80348_w350h250c1cx1491cy2383.jpg"
     },
     {
       "name" : "Margarita",
       "price" : 3,
-      "image" : "https://assets.afcdn.com/recipe/20180705/80288_w350h250c1cx1473cy1313.jpg"
+      "img" : "https://assets.afcdn.com/recipe/20180705/80288_w350h250c1cx1473cy1313.jpg"
     }
   ]
-}
+

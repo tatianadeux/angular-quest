@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
+import { Cocktail } from "../models/cocktail.model";
 
 @Injectable({
       providedIn: 'root'
@@ -9,17 +10,13 @@ import { map } from "rxjs/operators";
 
 export class CocktailService {
 
-  private service: HttpClient;
+  private baseUrl: string = 'assets/cocktails.json';
 
-  constructor(paramService: HttpClient){
-    this.service = paramService;
-  }
+  constructor(private httpClient: HttpClient){}
 
-  public getCocktails(): Observable<string> {
-    const observable1: Observable<any> = this.service.get("assets/cocktails.json")
-    const treatment = (param_data:any) => {
-        return param_data as string
-    }
-    return observable1.pipe(map(treatment))
+  getCocktailsList(): Observable<Cocktail[]> {
+
+    return this.httpClient.get<Cocktail[]>(`${this.baseUrl}`);
+
   }
 }

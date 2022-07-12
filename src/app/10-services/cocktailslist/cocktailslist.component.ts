@@ -9,18 +9,21 @@ import { CocktailService } from 'src/app/services/cocktail.service';
 })
 export class CocktailslistComponent implements OnInit {
 
+  /* liste qui contiendra tous les pokémons*/
   public cocktailsList: Cocktail[] = [];
-  private service: CocktailService;
 
-  constructor(public paramService: CocktailService) {
-    this.service = paramService;
-  }
+  constructor(public cocktailService: CocktailService) { }
+    /* instanciation du service */
 
-  public ngOnInit(): void {
-    this.service.getCocktails().subscribe(
-      /*(cocktailArryay: Cocktail[]) => {
-        this.cocktailsList = cocktailArryay
-      }*/
-    )
+  public ngOnInit(): Cocktail[] {
+    this.cocktailService.getCocktailsList()
+      .subscribe(
+        (cocktailArray: Cocktail[]) => {
+          this.cocktailsList = cocktailArray
+          console.log(this.cocktailsList);
+          console.log(cocktailArray);
+        }
+      )
+    return this.cocktailsList;
   }
 }

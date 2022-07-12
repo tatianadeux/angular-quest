@@ -20,6 +20,7 @@ import { DrivenFormComoponent } from './05-template-driven-forms/sign-up/driven-
 import { CocktailslistComponent } from './10-services/cocktailslist/cocktailslist.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { NasaComponent } from './12-nasa/nasa/nasa.component';
+import { CocktailComponent } from './10-services/cocktail/cocktail.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { NasaComponent } from './12-nasa/nasa/nasa.component';
     DrivenFormComoponent,
     CocktailslistComponent,
     ReactiveFormComponent,
-    NasaComponent
+    NasaComponent,
+    CocktailComponent
   ],
   imports: [
     BrowserModule,

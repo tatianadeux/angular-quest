@@ -1,5 +1,11 @@
 <h1>Liste des cocktails</h1>
-<app-cocktail *ngFor="let cocktail of cocktailsList" [cocktail]="cocktail"></app-cocktail>
+<section *ngFor="let cocktail of cocktailsList">
+  <div *ngIf=" cocktail != undefined">
+    <img [src]="cocktail.img" alt="">
+    <p>{{cocktail.name}}</p>
+    <p>{{cocktail.price}}€</p>
+  </div>
+</section>>
 
 
 

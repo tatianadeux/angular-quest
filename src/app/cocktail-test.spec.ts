@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { Observable, of } from 'rxjs';
 
 import { CocktailslistComponent } from './10-services/cocktailslist/cocktailslist.component';
+import { Cocktail } from './models/cocktail.model';
 import { CocktailService } from './services/cocktail.service';
 
 describe('Quest Test Suite', () => {
@@ -53,11 +54,11 @@ describe('Quest Test Suite', () => {
       () => {
         const fixture = TestBed.createComponent(CocktailslistComponent);
         const service: CocktailService = TestBed.inject(CocktailService);
-        const mock: Observable<any> = of([
+        const mock: Observable<Cocktail[]> = of([
           {
-            "name": "Mojito",
-            "price": 3,
-            "img": "https://assets.afcdn.com/recipe/20180705/80255_w350h250c1cx2774cy1849.jpg"
+            name: 'bloody mary',
+            price: 1,
+            img: 'https://i.4pcdn.org/s4s/1398123404333.gif'
           }
         ]);
 

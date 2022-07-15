@@ -21,6 +21,7 @@ import { CocktailslistComponent } from './10-services/cocktailslist/cocktailslis
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { NasaComponent } from './12-nasa/nasa/nasa.component';
 import { CocktailComponent } from './10-services/cocktail/cocktail.component';
+import { SearchMovieComponent } from './06-reactive-form/search-movie/search-movie.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { CocktailComponent } from './10-services/cocktail/cocktail.component';
     CocktailslistComponent,
     ReactiveFormComponent,
     NasaComponent,
-    CocktailComponent
+    CocktailComponent,
+    SearchMovieComponent,
   ],
   imports: [
     BrowserModule,

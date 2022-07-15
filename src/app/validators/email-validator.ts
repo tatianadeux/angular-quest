@@ -10,5 +10,7 @@ export function emailValidator(control: AbstractControl): ValidationErrors | nul
     }
   }
 
+  console.log(errors.validation.rules)
+
   return !valid ? errors : null;
 }

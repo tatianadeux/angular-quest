@@ -1,0 +1,43 @@
+<h3>Recherche de films</h3>
+<form (ngSubmit)="isValid && onSubmit()" [formGroup]="movieForm" >
+  <div formGroupName="credentials">
+
+    <div *ngIf="movieForm.get('credentials')?.errors && !movieForm.get('credentials')?.pristine" class="error-msg">
+      <span>{{movieForm.get('credentials')?.errors?.['isRequired'].rules}}</span>
+    </div>
+
+    <div>
+      <label for="select-id">Identifiant</label>
+      <input type="text" formControlName="identifiant" id="select-id">
+    </div>
+
+    <div>
+      <label for="select-title">Titre</label>
+      <input type="text" formControlName="title" id="select-title">
+    </div>
+  </div>
+
+  <div>
+    <label for="select-type">Type</label>
+    <select name="" id="select-type" formControlName="type">
+      <option *ngFor="let type of typesList" value="{{type}}" >{{type}}</option>
+    </select>
+  </div>
+
+  <div>
+    <div *ngIf="movieForm.get('year') && !movieForm.get('year')?.pristine" class="error-msg">
+      <span>{{movieForm.get('year')?.errors?.['validation'].rules}}</span>
+    </div>
+    <label for="select-year">Année</label>
+    <input type="number" formControlName="year" id="select-year">
+  </div>
+
+  <div>
+    <label for="select-fiche">Fiche</label>
+    <select name="" id="select-fiche" formControlName="fiche">
+      <option *ngFor="let fiche of fichesList" value="{{fiche}}">{{fiche}}</option>
+    </select>
+  </div>
+
+  <button type="submit">Rechercher</button>
+</form>
